@@ -39,106 +39,95 @@ Descripción general del sistema, objetivos del proyecto, público objetivo y al
 ## 2. Requisitos del sistema
 
 ### 2.1 Requisitos funcionales
-#### 📦 Módulo 1: Gestión de usuarios
+#### 📦 RF1: Registro y Autenticación de Usuarios
 <details>
   <summary>Ver requisitos</summary>
 
-- RNF-U1: El sistema debe validar la autenticación en menos de 1 segundo.
-- RNF-U2: Los datos del usuario deben estar cifrados en la base de datos.
-- RNF-U3: Las sesiones deben expirar después de 15 minutos de inactividad.
+- RF1.1: El sistema debe permitir el registro de usuarios (docentes y estudiantes) con una dirección de email válida y una contraseña de mínimo 8 caracteres.
+- RF1.2: El sistema debe permitir a los usuarios iniciar sesión con email y contraseña registrados.
+- RF1.3: El sistema debe permitir la recuperación de contraseña mediante envío de enlace de restablecimiento al correo electrónico del usuario.
 
 </details>
 
-#### 🎯 Módulo 2: Creación y gestión de trivias
+#### 🎯 RF2: Gestión de Trivias (Docente)
 <details>
   <summary>Ver requisitos</summary>
 
-- RNF-T1: El sistema debe guardar una trivia en menos de 1 segundo.
-- RNF-T2: El contenido de las trivias debe almacenarse en formato seguro para prevenir XSS.
-- RNF-T3: El editor de preguntas debe ser accesible según la norma WCAG 2.1.
+- RF2.1: El sistema debe permitir al docente crear una trivia ingresando un título (mínimo 5 caracteres) y una descripción (opcional).
+- RF2.2: El sistema debe permitir listar todas las trivias creadas por el docente actual, mostrando al menos título, número de preguntas y fecha de creación.
+- RF2.3: El sistema debe permitir editar el título y descripción de una trivia existente.
+- RF2.4: El sistema debe permitir eliminar trivias creadas por el docente actual.
 
 </details>
 
-#### 📊 Módulo 3: Participación estudiantil
+#### 📊 RF3: Gestión de Preguntas (Docente)
 <details>
   <summary>Ver requisitos</summary>
 
-- RNF-P1: La carga de una trivia para el estudiante no debe superar los 2 segundos.
-- RNF-P2: Debe garantizarse disponibilidad del 99.5% durante horarios escolares.
-- RNF-P3: El sistema debe prevenir múltiples respuestas desde el mismo usuario.
+- RF3.1: El sistema debe permitir al docente agregar preguntas de opción múltiple a una trivia, especificando el enunciado, al menos 2 opciones, y una opción correcta.
+- RF3.2: El sistema debe permitir al docente agregar preguntas de tipo verdadero/falso.
+- RF3.3: El sistema debe permitir al docente editar el enunciado, las opciones y la respuesta correcta de una pregunta existente.
+- RF3.4: El sistema debe permitir eliminar preguntas de una trivia.
 
 </details>
 
-#### 🧮 Módulo 4: Evaluación y retroalimentación
+#### 🧮 RF4: Interacción del Estudiante
 <details>
   <summary>Ver requisitos</summary>
 
-- RNF-E1: Los resultados deben mostrarse inmediatamente después de responder.
-- RNF-E2: El sistema debe registrar el historial de resultados de cada estudiante.
-- RNF-E3: Las gráficas de retroalimentación deben cargarse en menos de 1 segundo.
+- RF4.1: El sistema debe permitir a un estudiante registrado ver la lista de trivias disponibles para su cuenta, incluyendo título y estado (completada/no completada).
+- RF4.2: El sistema debe permitir que un estudiante seleccione una trivia y responda todas las preguntas en una sola sesión.
+- RF4.3: El sistema debe almacenar el intento del estudiante, incluyendo sus respuestas, la trivia respondida y la fecha del intento.
 
 </details>
 
-#### 🛠️ Módulo 5: Administración del sistema
+#### 🛠️ RF5: Visualización de Resultados
 <details>
   <summary>Ver requisitos</summary>
 
-- RNF-A1: Las operaciones administrativas deben estar protegidas por autenticación de doble factor.
-- RNF-A2: Los logs deben guardarse en servidores seguros durante mínimo 6 meses.
-- RNF-A3: La interfaz de administración debe ser responsiva para dispositivos móviles.
+- RF5.1: Al finalizar una trivia, el sistema debe mostrar al estudiante un resumen con su puntaje total (porcentaje de aciertos), número de respuestas correctas/incorrectas y las respuestas correctas de cada pregunta.
+- RF5.2: El sistema debe permitir al docente consultar un historial de intentos de cada trivia, filtrando por estudiante y fecha, mostrando para cada intento: nombre del estudiante, fecha del intento y puntaje obtenido.
 
 </details>
 
 ### 2.2 Requisitos no funcionales
-#### 📦 Módulo 1: Gestión de usuarios
+#### 📦 RNF1: Seguridad
 <details>
   <summary>Ver requisitos</summary>
 
-- RNF-U1: El sistema debe validar la autenticación en menos de 1 segundo.
-- RNF-U2: Los datos del usuario deben estar cifrados en la base de datos.
-- RNF-U3: Las sesiones deben expirar después de 15 minutos de inactividad.
+- RNF1.1: Las contraseñas de todos los usuarios deben almacenarse cifradas con el algoritmo BCrypt.
+- RNF1.2: El sistema debe implementar protección contra ataques comunes: CSRF, XSS y SQL Injection (verificable mediante pruebas de penetración).
+- RNF1.3: Solo los usuarios autenticados pueden acceder a funcionalidades privadas del sistema (verificable mediante pruebas de roles).
 
 </details>
 
-#### 🎯 Módulo 2: Creación y gestión de trivias
+#### 🎯 RNF2: Rendimiento
 <details>
   <summary>Ver requisitos</summary>
 
-- RNF-T1: El sistema debe guardar una trivia en menos de 1 segundo.
-- RNF-T2: El contenido de las trivias debe almacenarse en formato seguro para prevenir XSS.
-- RNF-T3: El editor de preguntas debe ser accesible según la norma WCAG 2.1.
+- RNF2.1: El sistema debe ser capaz de manejar al menos 100 usuarios activos simultáneamente sin pérdida de funcionalidad.
+- RNF2.2: El tiempo de carga de una trivia (preguntas + opciones) no debe superar los 2 segundos bajo carga normal (medido con herramientas de pruebas de rendimiento como JMeter o Apache Benchmark).
 
 </details>
 
-#### 📊 Módulo 3: Participación estudiantil
+#### 📊 RNF3: Usabilidad
 <details>
   <summary>Ver requisitos</summary>
 
-- RNF-P1: La carga de una trivia para el estudiante no debe superar los 2 segundos.
-- RNF-P2: Debe garantizarse disponibilidad del 99.5% durante horarios escolares.
-- RNF-P3: El sistema debe prevenir múltiples respuestas desde el mismo usuario.
+- RNF3.1: La interfaz del sistema debe permitir a un usuario nuevo completar el registro y responder una trivia en menos de 5 minutos sin ayuda externa (verificable mediante pruebas de usabilidad).
+- RNF3.2: El sistema debe ser accesible desde dispositivos móviles y de escritorio, utilizando diseño responsive (verificable con herramientas como Chrome DevTools)
 
 </details>
 
-#### 🧮 Módulo 4: Evaluación y retroalimentación
+#### 🧮 RNF4: Disponibilidad
 <details>
   <summary>Ver requisitos</summary>
 
-- RNF-E1: Los resultados deben mostrarse inmediatamente después de responder.
-- RNF-E2: El sistema debe registrar el historial de resultados de cada estudiante.
-- RNF-E3: Las gráficas de retroalimentación deben cargarse en menos de 1 segundo.
+- RNF4.1: El sistema debe estar disponible al menos el 99% del tiempo mensual (medido por el proveedor de hosting, como Render).
+- RNF4.2: El sistema debe mostrar un mensaje de error amigable en caso de fallas de conexión o errores del servidor.
 
 </details>
 
-#### 🛠️ Módulo 5: Administración del sistema
-<details>
-  <summary>Ver requisitos</summary>
-
-- RNF-A1: Las operaciones administrativas deben estar protegidas por autenticación de doble factor.
-- RNF-A2: Los logs deben guardarse en servidores seguros durante mínimo 6 meses.
-- RNF-A3: La interfaz de administración debe ser responsiva para dispositivos móviles.
-
-</details>
 
 
 ## 3. Análisis
@@ -147,12 +136,47 @@ Descripción general del sistema, objetivos del proyecto, público objetivo y al
 <details>
   <summary>Ver casos</summary>
 
+- **CU01 - Registrarse**
+  - **Actor**: Docente / Estudiante / Administrador
+  - **Flujo principal**: 1. Accede al formulario de registro.
+                         2. Ingresa nombre, correo, contraseña y rol.
+                         3. El sistema valida que el correo no esté registrado.
+                         4. El sistema cifra la contraseña (BCrypt) y registra al usuario.
+                         5. Se redirige al login.
+
+  - **Flujos alternativos**: 3a. Si el correo ya existe, se muestra un mensaje de error.
+  - **Precondiciones**: El usuario no debe estar registrado.
+  - **Postcondiciones**:  La cuenta se crea y el usuario puede iniciar sesión.
+
+- **CU01 - Iniciar sesión**
+  - **Actor**: Docente
+  - **Flujo principal**: ...
+  - **Flujos alternativos**: ...
+  - **Precondiciones**: ...
+  - **Postcondiciones**: ...
+
 - **CU01 - Crear Trivia**
   - **Actor**: Docente
   - **Flujo principal**: ...
   - **Flujos alternativos**: ...
   - **Precondiciones**: ...
   - **Postcondiciones**: ...
+
+- **CU01 - Crear Trivia**
+  - **Actor**: Docente
+  - **Flujo principal**: ...
+  - **Flujos alternativos**: ...
+  - **Precondiciones**: ...
+  - **Postcondiciones**: ...
+
+
+
+
+
+
+
+
+
 
 </details>
 
