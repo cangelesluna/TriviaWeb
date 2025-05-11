@@ -136,6 +136,8 @@ Descripción general del sistema, objetivos del proyecto, público objetivo y al
 <details>
   <summary>Ver casos</summary>
 
+#### Módulo 1 : Autenticación Y Gestión De Usuarios
+
 - **CU01 - Registrarse**
   - **Actor**: Docente / Estudiante / Administrador
   - **Flujo principal**: 1. Accede al formulario de registro.
@@ -148,26 +150,187 @@ Descripción general del sistema, objetivos del proyecto, público objetivo y al
   - **Precondiciones**: El usuario no debe estar registrado.
   - **Postcondiciones**:  La cuenta se crea y el usuario puede iniciar sesión.
 
-- **CU01 - Iniciar sesión**
-  - **Actor**: Docente
-  - **Flujo principal**: ...
-  - **Flujos alternativos**: ...
-  - **Precondiciones**: ...
-  - **Postcondiciones**: ...
+- **CU02 - Iniciar Sesión**
+  - **Actor**: Todos los usuarios
+  - **Flujo principal**: 1. Accede al login.
+                         2. Ingresa correo y contraseña.
+                         3. El sistema valida credenciales y redirige según el rol.
+                      
+  - **Flujos alternativos**: 3a. Si las credenciales no coinciden, muestra error.
+  - **Precondiciones**: El usuario debe estar registrado.
+  - **Postcondiciones**:  Acceso concedido al sistema.
 
-- **CU01 - Crear Trivia**
-  - **Actor**: Docente
-  - **Flujo principal**: ...
-  - **Flujos alternativos**: ...
-  - **Precondiciones**: ...
-  - **Postcondiciones**: ...
+- **CU03- Cerrar Sesión**
+  - **Actor**: Todos los usuarios
+  - **Flujo principal**: 1. Clic en “Cerrar sesión”.
+                         2. El sistema invalida la sesión.
+                         3. Redirige al login.
+                    
+   - **Precondiciones**:  Usuario autenticado.
+  - **Postcondiciones**:  Sesión cerrada correctamente.
 
-- **CU01 - Crear Trivia**
+- **CU04 - Recuperar contraseña**
+  - **Actor**: Todos los usuarios
+  - **Flujo principal**: 1. Accede a "¿Olvidaste tu contraseña?".
+                         2. Ingresa su correo.
+                         3. El sistema envía enlace de recuperación.
+                         4. Define una nueva contraseña.
+                     
+  - **Flujos alternativos**: 2a. Si el correo no está registrado, se muestra error.
+  - **Precondiciones**: Correo registrado.
+  - **Postcondiciones**:  Contraseña actualizada.
+
+#### Módulo 2 : Gestión de Trivias (Docente)
+
+- **CU05 - Ver Dashboard de trivias propias**
   - **Actor**: Docente
-  - **Flujo principal**: ...
-  - **Flujos alternativos**: ...
-  - **Precondiciones**: ...
-  - **Postcondiciones**: ...
+  - **Flujo principal**: 1. Accede al panel de trivias.
+                         2. El sistema muestra sus trivias activas.
+                       
+  - **Flujos alternativos**: Si no hay trivias, se muestra un mensaje vacío.
+  - **Precondiciones**: Autenticado como docente.
+  - **Postcondiciones**:  Trivias listadas en el panel.
+
+- **CU06 - Crear nueva trivia**
+  - **Actor**: Docente
+  - **Flujo principal**: 1. Accede a “Crear trivia”.
+                         2. Llena título, descripción y tiempo.
+                         3. El sistema guarda la trivia.
+                
+  - **Flujos alternativos**: Si falta un campo obligatorio, muestra error.
+  - **Precondiciones**: Sesión activa.
+  - **Postcondiciones**:  Trivia registrada.
+
+- **CU01 - Registrarse**
+  - **Actor**: ...
+  - **Flujo principal**: 1. ...
+                         2. ..
+                         3. ...
+                         4. ...
+                         5. ..
+
+  - **Flujos alternativos**: ..
+  - **Precondiciones**: ..
+  - **Postcondiciones**:  ...
+
+- **CU01 - Registrarse**
+  - **Actor**: ...
+  - **Flujo principal**: 1. ...
+                         2. ..
+                         3. ...
+                         4. ...
+                         5. ..
+
+  - **Flujos alternativos**: ..
+  - **Precondiciones**: ..
+  - **Postcondiciones**:  ...
+
+
+- **CU01 - Registrarse**
+  - **Actor**: ...
+  - **Flujo principal**: 1. ...
+                         2. ..
+                         3. ...
+                         4. ...
+                         5. ..
+
+  - **Flujos alternativos**: ..
+  - **Precondiciones**: ..
+  - **Postcondiciones**:  ...
+
+
+- **CU01 - Registrarse**
+  - **Actor**: ...
+  - **Flujo principal**: 1. ...
+                         2. ..
+                         3. ...
+                         4. ...
+                         5. ..
+
+  - **Flujos alternativos**: ..
+  - **Precondiciones**: ..
+  - **Postcondiciones**:  ...
+
+
+- **CU01 - Registrarse**
+  - **Actor**: ...
+  - **Flujo principal**: 1. ...
+                         2. ..
+                         3. ...
+                         4. ...
+                         5. ..
+
+  - **Flujos alternativos**: ..
+  - **Precondiciones**: ..
+  - **Postcondiciones**:  ...
+
+
+- **CU01 - Registrarse**
+  - **Actor**: ...
+  - **Flujo principal**: 1. ...
+                         2. ..
+                         3. ...
+                         4. ...
+                         5. ..
+
+  - **Flujos alternativos**: ..
+  - **Precondiciones**: ..
+  - **Postcondiciones**:  ...
+
+
+- **CU01 - Registrarse**
+  - **Actor**: ...
+  - **Flujo principal**: 1. ...
+                         2. ..
+                         3. ...
+                         4. ...
+                         5. ..
+
+  - **Flujos alternativos**: ..
+  - **Precondiciones**: ..
+  - **Postcondiciones**:  ...
+
+
+- **CU01 - Registrarse**
+  - **Actor**: ...
+  - **Flujo principal**: 1. ...
+                         2. ..
+                         3. ...
+                         4. ...
+                         5. ..
+
+  - **Flujos alternativos**: ..
+  - **Precondiciones**: ..
+  - **Postcondiciones**:  ...
+
+
+- **CU01 - Registrarse**
+  - **Actor**: ...
+  - **Flujo principal**: 1. ...
+                         2. ..
+                         3. ...
+                         4. ...
+                         5. ..
+
+  - **Flujos alternativos**: ..
+  - **Precondiciones**: ..
+  - **Postcondiciones**:  ...
+
+
+- **CU01 - Registrarse**
+  - **Actor**: ...
+  - **Flujo principal**: 1. ...
+                         2. ..
+                         3. ...
+                         4. ...
+                         5. ..
+
+  - **Flujos alternativos**: ..
+  - **Precondiciones**: ..
+  - **Postcondiciones**:  ...
+
+
+
 
 
 
