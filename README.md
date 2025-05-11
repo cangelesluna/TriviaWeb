@@ -39,27 +39,107 @@ Descripción general del sistema, objetivos del proyecto, público objetivo y al
 ## 2. Requisitos del sistema
 
 ### 2.1 Requisitos funcionales
+#### 📦 Módulo 1: Gestión de usuarios
 <details>
-  <summary>Ver lista</summary>
+  <summary>Ver requisitos</summary>
 
-- RF1: El docente puede crear trivias.
-- RF2: El estudiante puede participar en las trivias activas.
-- RF3: El sistema registra puntajes por estudiante.
-- ...
+- RNF-U1: El sistema debe validar la autenticación en menos de 1 segundo.
+- RNF-U2: Los datos del usuario deben estar cifrados en la base de datos.
+- RNF-U3: Las sesiones deben expirar después de 15 minutos de inactividad.
+
+</details>
+
+#### 🎯 Módulo 2: Creación y gestión de trivias
+<details>
+  <summary>Ver requisitos</summary>
+
+- RNF-T1: El sistema debe guardar una trivia en menos de 1 segundo.
+- RNF-T2: El contenido de las trivias debe almacenarse en formato seguro para prevenir XSS.
+- RNF-T3: El editor de preguntas debe ser accesible según la norma WCAG 2.1.
+
+</details>
+
+#### 📊 Módulo 3: Participación estudiantil
+<details>
+  <summary>Ver requisitos</summary>
+
+- RNF-P1: La carga de una trivia para el estudiante no debe superar los 2 segundos.
+- RNF-P2: Debe garantizarse disponibilidad del 99.5% durante horarios escolares.
+- RNF-P3: El sistema debe prevenir múltiples respuestas desde el mismo usuario.
+
+</details>
+
+#### 🧮 Módulo 4: Evaluación y retroalimentación
+<details>
+  <summary>Ver requisitos</summary>
+
+- RNF-E1: Los resultados deben mostrarse inmediatamente después de responder.
+- RNF-E2: El sistema debe registrar el historial de resultados de cada estudiante.
+- RNF-E3: Las gráficas de retroalimentación deben cargarse en menos de 1 segundo.
+
+</details>
+
+#### 🛠️ Módulo 5: Administración del sistema
+<details>
+  <summary>Ver requisitos</summary>
+
+- RNF-A1: Las operaciones administrativas deben estar protegidas por autenticación de doble factor.
+- RNF-A2: Los logs deben guardarse en servidores seguros durante mínimo 6 meses.
+- RNF-A3: La interfaz de administración debe ser responsiva para dispositivos móviles.
 
 </details>
 
 ### 2.2 Requisitos no funcionales
+#### 📦 Módulo 1: Gestión de usuarios
 <details>
-  <summary>Ver lista</summary>
+  <summary>Ver requisitos</summary>
 
-- RNF1: La aplicación debe cargar en menos de 2 segundos.
-- RNF2: El sistema debe permitir 50 conexiones concurrentes.
-- ...
+- RNF-U1: El sistema debe validar la autenticación en menos de 1 segundo.
+- RNF-U2: Los datos del usuario deben estar cifrados en la base de datos.
+- RNF-U3: Las sesiones deben expirar después de 15 minutos de inactividad.
 
 </details>
 
----
+#### 🎯 Módulo 2: Creación y gestión de trivias
+<details>
+  <summary>Ver requisitos</summary>
+
+- RNF-T1: El sistema debe guardar una trivia en menos de 1 segundo.
+- RNF-T2: El contenido de las trivias debe almacenarse en formato seguro para prevenir XSS.
+- RNF-T3: El editor de preguntas debe ser accesible según la norma WCAG 2.1.
+
+</details>
+
+#### 📊 Módulo 3: Participación estudiantil
+<details>
+  <summary>Ver requisitos</summary>
+
+- RNF-P1: La carga de una trivia para el estudiante no debe superar los 2 segundos.
+- RNF-P2: Debe garantizarse disponibilidad del 99.5% durante horarios escolares.
+- RNF-P3: El sistema debe prevenir múltiples respuestas desde el mismo usuario.
+
+</details>
+
+#### 🧮 Módulo 4: Evaluación y retroalimentación
+<details>
+  <summary>Ver requisitos</summary>
+
+- RNF-E1: Los resultados deben mostrarse inmediatamente después de responder.
+- RNF-E2: El sistema debe registrar el historial de resultados de cada estudiante.
+- RNF-E3: Las gráficas de retroalimentación deben cargarse en menos de 1 segundo.
+
+</details>
+
+#### 🛠️ Módulo 5: Administración del sistema
+<details>
+  <summary>Ver requisitos</summary>
+
+- RNF-A1: Las operaciones administrativas deben estar protegidas por autenticación de doble factor.
+- RNF-A2: Los logs deben guardarse en servidores seguros durante mínimo 6 meses.
+- RNF-A3: La interfaz de administración debe ser responsiva para dispositivos móviles.
+
+</details>
+
 
 ## 3. Análisis
 
