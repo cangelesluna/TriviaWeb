@@ -32,7 +32,14 @@
 
 ## 1. Introducción
 
-Descripción general del sistema, objetivos del proyecto, público objetivo y alcance.
+Este documento corresponde al primer avance del proyecto titulado **"Implementación de una herramienta interactiva para fomentar la participación estudiantil en Crack The Code"**, desarrollado para la startup educativa Crack The Code, especializada en la formación tecnológica para jóvenes en Latinoamérica.
+
+El objetivo principal del proyecto es desarrollar una plataforma tecnológica innovadora que incremente la participación activa de los estudiantes a través de dinámicas interactivas, gamificación y retroalimentación personalizada. Esta herramienta busca complementar los cursos y bootcamps existentes, mejorando la experiencia educativa y manteniendo la motivación y el compromiso de los alumnos durante todo el proceso de aprendizaje.
+
+Actualmente, la empresa enfrenta desafíos relacionados con la falta de herramientas interactivas dentro de su plataforma Moodle, lo que limita la capacidad de mantener el interés y la retención de los estudiantes. La solución propuesta se enfoca en incorporar funcionalidades que permitan la autoevaluación, seguimiento del progreso y comunicación fluida entre estudiantes y docentes, generando un ambiente educativo dinámico y atractivo.
+
+Este documento recopila la planificación, análisis de requerimientos, diseño y avances realizados, con el propósito de guiar al equipo de desarrollo en la implementación efectiva de la solución tecnológica, garantizando su alineación con los objetivos estratégicos de Crack The Code y las necesidades de sus usuarios finales.
+
 
 ---
 
@@ -136,212 +143,239 @@ Descripción general del sistema, objetivos del proyecto, público objetivo y al
 <details>
   <summary>Ver casos</summary>
 
-#### Módulo 1 : Autenticación Y Gestión De Usuarios
+#### Módulo 1 : Autenticación Y Gestión De Usuarios  
+**Objetivo:** Permitir el acceso seguro al sistema y la gestión básica de cuentas.
 
-- **CU01 - Registrarse**
-  - **Actor**: Docente / Estudiante / Administrador
-  - **Flujo principal**: 1. Accede al formulario de registro.
-                         2. Ingresa nombre, correo, contraseña y rol.
-                         3. El sistema valida que el correo no esté registrado.
-                         4. El sistema cifra la contraseña (BCrypt) y registra al usuario.
-                         5. Se redirige al login.
+- **CU01 – Registrarse**  
+  - **Actor Principal:** Docente / Estudiante / Administrador  
+  - **Precondiciones:** El usuario no debe estar registrado.  
+  - **Flujo Principal:**  
+    1. Accede al formulario de registro.  
+    2. Ingresa nombre, correo, contraseña y rol.  
+    3. El sistema valida que el correo no esté registrado.  
+    4. El sistema cifra la contraseña (BCrypt) y registra al usuario.  
+    5. Se redirige al login.  
+  - **Flujos Alternativos:**  
+    3a. Si el correo ya existe, se muestra un mensaje de error.  
+  - **Postcondiciones:** La cuenta se crea y el usuario puede iniciar sesión.
 
-  - **Flujos alternativos**: 3a. Si el correo ya existe, se muestra un mensaje de error.
-  - **Precondiciones**: El usuario no debe estar registrado.
-  - **Postcondiciones**:  La cuenta se crea y el usuario puede iniciar sesión.
+- **CU02 – Iniciar sesión**  
+  - **Actor Principal:** Todos los usuarios  
+  - **Precondiciones:** El usuario debe estar registrado.  
+  - **Flujo Principal:**  
+    1. Accede al login.  
+    2. Ingresa correo y contraseña.  
+    3. El sistema valida credenciales y redirige según el rol.  
+  - **Flujos Alternativos:**  
+    3a. Si las credenciales no coinciden, muestra error.  
+  - **Postcondiciones:** Acceso concedido al sistema.
 
-- **CU02 - Iniciar Sesión**
-  - **Actor**: Todos los usuarios
-  - **Flujo principal**: 1. Accede al login.
-                         2. Ingresa correo y contraseña.
-                         3. El sistema valida credenciales y redirige según el rol.
-                      
-  - **Flujos alternativos**: 3a. Si las credenciales no coinciden, muestra error.
-  - **Precondiciones**: El usuario debe estar registrado.
-  - **Postcondiciones**:  Acceso concedido al sistema.
+- **CU03 – Cerrar sesión**  
+  - **Actor Principal:** Todos los usuarios  
+  - **Precondiciones:** Usuario autenticado.  
+  - **Flujo Principal:**  
+    1. Clic en “Cerrar sesión”.  
+    2. El sistema invalida la sesión.  
+    3. Redirige al login.  
+  - **Postcondiciones:** Sesión cerrada correctamente.
 
-- **CU03- Cerrar Sesión**
-  - **Actor**: Todos los usuarios
-  - **Flujo principal**: 1. Clic en “Cerrar sesión”.
-                         2. El sistema invalida la sesión.
-                         3. Redirige al login.
-                    
-   - **Precondiciones**:  Usuario autenticado.
-  - **Postcondiciones**:  Sesión cerrada correctamente.
+- **CU04 – Recuperar contraseña**  
+  - **Actor Principal:** Todos los usuarios  
+  - **Precondiciones:** Correo registrado.  
+  - **Flujo Principal:**  
+    1. Accede a "¿Olvidaste tu contraseña?".  
+    2. Ingresa su correo.  
+    3. El sistema envía enlace de recuperación.  
+    4. Define una nueva contraseña.  
+  - **Flujos Alternativos:**  
+    2a. Si el correo no está registrado, se muestra error.  
+  - **Postcondiciones:** Contraseña actualizada.
 
-- **CU04 - Recuperar contraseña**
-  - **Actor**: Todos los usuarios
-  - **Flujo principal**: 1. Accede a "¿Olvidaste tu contraseña?".
-                         2. Ingresa su correo.
-                         3. El sistema envía enlace de recuperación.
-                         4. Define una nueva contraseña.
-                     
-  - **Flujos alternativos**: 2a. Si el correo no está registrado, se muestra error.
-  - **Precondiciones**: Correo registrado.
-  - **Postcondiciones**:  Contraseña actualizada.
+---
 
-#### Módulo 2 : Gestión de Trivias (Docente)
+#### Módulo 2 : Gestión de Trivias (Docente)  
+**Objetivo:** Permitir al docente crear, administrar y editar trivias educativas.
 
-- **CU05 - Ver Dashboard de trivias propias**
-  - **Actor**: Docente
-  - **Flujo principal**: 1. Accede al panel de trivias.
-                         2. El sistema muestra sus trivias activas.
-                       
-  - **Flujos alternativos**: Si no hay trivias, se muestra un mensaje vacío.
-  - **Precondiciones**: Autenticado como docente.
-  - **Postcondiciones**:  Trivias listadas en el panel.
+- **CU05 – Ver Dashboard de trivias propias**  
+  - **Actor Principal:** Docente  
+  - **Precondiciones:** Autenticado como docente.  
+  - **Flujo Principal:**  
+    1. Accede al panel de trivias.  
+    2. El sistema muestra sus trivias activas.  
+  - **Flujos Alternativos:**  
+    Si no hay trivias, se muestra un mensaje vacío.  
+  - **Postcondiciones:** Trivias listadas en el panel.
 
-- **CU06 - Crear nueva trivia**
-  - **Actor**: Docente
-  - **Flujo principal**: 1. Accede a “Crear trivia”.
-                         2. Llena título, descripción y tiempo.
-                         3. El sistema guarda la trivia.
-                
-  - **Flujos alternativos**: Si falta un campo obligatorio, muestra error.
-  - **Precondiciones**: Sesión activa.
-  - **Postcondiciones**:  Trivia registrada.
+- **CU06 – Crear nueva trivia**  
+  - **Actor Principal:** Docente  
+  - **Precondiciones:** Sesión activa.  
+  - **Flujo Principal:**  
+    1. Accede a “Crear trivia”.  
+    2. Llena título, descripción y tiempo.  
+    3. El sistema guarda la trivia.  
+  - **Flujos Alternativos:**  
+    Si falta un campo obligatorio, muestra error.  
+  - **Postcondiciones:** Trivia registrada.
 
-- **CU01 - Registrarse**
-  - **Actor**: ...
-  - **Flujo principal**: 1. ...
-                         2. ..
-                         3. ...
-                         4. ...
-                         5. ..
+- **CU07 – Ver listado de preguntas de una trivia**  
+  - **Actor Principal:** Docente  
+  - **Precondiciones:** Trivia existente.  
+  - **Flujo Principal:**  
+    1. Entra al detalle de la trivia.  
+    2. Se listan las preguntas asociadas.  
+  - **Postcondiciones:** Visualiza las preguntas de esa trivia.
 
-  - **Flujos alternativos**: ..
-  - **Precondiciones**: ..
-  - **Postcondiciones**:  ...
+- **CU08 – Agregar pregunta a trivia**  
+  - **Actor Principal:** Docente  
+  - **Precondiciones:** Trivia existente.  
+  - **Flujo Principal:**  
+    1. Clic en “Agregar pregunta”.  
+    2. Define tipo, enunciado, opciones, respuesta correcta.  
+    3. El sistema guarda la pregunta.  
+  - **Flujos Alternativos:**  
+    Si no hay respuesta marcada, muestra advertencia.  
+  - **Postcondiciones:** Pregunta añadida.
 
-- **CU01 - Registrarse**
-  - **Actor**: ...
-  - **Flujo principal**: 1. ...
-                         2. ..
-                         3. ...
-                         4. ...
-                         5. ..
+- **CU09 – Editar trivia existente**  
+  - **Actor Principal:** Docente  
+  - **Precondiciones:** Trivia creada por el docente.  
+  - **Flujo Principal:**  
+    1. Accede a trivia.  
+    2. Modifica campos.  
+    3. Guarda cambios.  
+  - **Postcondiciones:** Trivia actualizada.
 
-  - **Flujos alternativos**: ..
-  - **Precondiciones**: ..
-  - **Postcondiciones**:  ...
+- **CU10 – Eliminar trivia**  
+  - **Actor Principal:** Docente  
+  - **Precondiciones:** Ser propietario de la trivia.  
+  - **Flujo Principal:**  
+    1. Clic en “Eliminar trivia”.  
+    2. Confirma la acción.  
+    3. El sistema borra la trivia y preguntas asociadas.  
+  - **Postcondiciones:** Trivia eliminada.
 
+- **CU11 – Editar pregunta existente**  
+  - **Actor Principal:** Docente  
+  - **Precondiciones:** Pregunta ya registrada.  
+  - **Flujo Principal:**  
+    1. Accede a la pregunta.  
+    2. Edita el enunciado, tipo u opciones.  
+    3. Guarda cambios.  
+  - **Postcondiciones:** Pregunta modificada.
 
-- **CU01 - Registrarse**
-  - **Actor**: ...
-  - **Flujo principal**: 1. ...
-                         2. ..
-                         3. ...
-                         4. ...
-                         5. ..
+- **CU12 – Eliminar pregunta**  
+  - **Actor Principal:** Docente  
+  - **Precondiciones:** Pregunta existente.  
+  - **Flujo Principal:**  
+    1. Elige la pregunta.  
+    2. Confirma eliminación.  
+    3. El sistema la elimina.  
+  - **Postcondiciones:** Pregunta removida.
 
-  - **Flujos alternativos**: ..
-  - **Precondiciones**: ..
-  - **Postcondiciones**:  ...
+---
 
+#### Módulo 3 : Evaluación y Resultados (Docente)  
+**Objetivo:** Brindar herramientas al docente para el seguimiento del desempeño estudiantil.
 
-- **CU01 - Registrarse**
-  - **Actor**: ...
-  - **Flujo principal**: 1. ...
-                         2. ..
-                         3. ...
-                         4. ...
-                         5. ..
+- **CU13 – Ver resultados de los estudiantes**  
+  - **Actor Principal:** Docente  
+  - **Precondiciones:** Estudiantes han respondido a la trivia.  
+  - **Flujo Principal:**  
+    1. Accede a “Ver resultados”.  
+    2. El sistema muestra lista con nombres, puntajes, fechas.  
+  - **Postcondiciones:** Resultados visibles.
 
-  - **Flujos alternativos**: ..
-  - **Precondiciones**: ..
-  - **Postcondiciones**:  ...
+- **CU14 – Ver detalle de respuestas por estudiante**  
+  - **Actor Principal:** Docente  
+  - **Precondiciones:** Al menos un intento registrado.  
+  - **Flujo Principal:**  
+    1. Selecciona a un estudiante.  
+    2. Se muestran sus respuestas por pregunta.  
+  - **Postcondiciones:** Docente accede a análisis individual.
 
+---
 
-- **CU01 - Registrarse**
-  - **Actor**: ...
-  - **Flujo principal**: 1. ...
-                         2. ..
-                         3. ...
-                         4. ...
-                         5. ..
+#### Módulo 4 : Participación Estudiantil  
+**Objetivo:** Facilitar a los estudiantes el acceso y resolución de trivias asignadas.
 
-  - **Flujos alternativos**: ..
-  - **Precondiciones**: ..
-  - **Postcondiciones**:  ...
+- **CU15 – Ver lista de trivias disponibles**  
+  - **Actor Principal:** Estudiante  
+  - **Precondiciones:** Sesión activa.  
+  - **Flujo Principal:**  
+    1. Accede a la sección “Mis trivias”.  
+    2. Se muestran trivias habilitadas.  
+  - **Postcondiciones:** Estudiante conoce sus trivias pendientes.
 
+- **CU16 – Iniciar trivia asignada**  
+  - **Actor Principal:** Estudiante  
+  - **Precondiciones:** Trivia disponible y no respondida.  
+  - **Flujo Principal:**  
+    1. Selecciona trivia.  
+    2. Se muestra introducción o instrucciones.  
+    3. Inicia la trivia.  
+  - **Postcondiciones:** Sesión de trivia en progreso.
 
-- **CU01 - Registrarse**
-  - **Actor**: ...
-  - **Flujo principal**: 1. ...
-                         2. ..
-                         3. ...
-                         4. ...
-                         5. ..
+- **CU17 – Responder preguntas de trivia**  
+  - **Actor Principal:** Estudiante  
+  - **Precondiciones:** Trivia iniciada.  
+  - **Flujo Principal:**  
+    1. Lee pregunta.  
+    2. Selecciona respuesta.  
+    3. Clic en siguiente.  
+  - **Flujos Alternativos:**  
+    Si no responde, sistema no deja avanzar.  
+  - **Postcondiciones:** Respuestas guardadas temporalmente.
 
-  - **Flujos alternativos**: ..
-  - **Precondiciones**: ..
-  - **Postcondiciones**:  ...
+- **CU18 – Finalizar trivia y enviar respuestas**  
+  - **Actor Principal:** Estudiante  
+  - **Precondiciones:** Trivia en progreso.  
+  - **Flujo Principal:**  
+    1. Clic en “Finalizar trivia”.  
+    2. El sistema registra intento, puntaje y tiempo.  
+  - **Postcondiciones:** Trivia finalizada.
 
+- **CU19 – Ver resultados (puntaje y feedback)**  
+  - **Actor Principal:** Estudiante  
+  - **Precondiciones:** Trivia finalizada.  
+  - **Flujo Principal:**  
+    1. El sistema muestra resultados automáticamente.  
+    2. Se ve puntaje, preguntas correctas e incorrectas.  
+  - **Postcondiciones:** Feedback completo al estudiante.
 
-- **CU01 - Registrarse**
-  - **Actor**: ...
-  - **Flujo principal**: 1. ...
-                         2. ..
-                         3. ...
-                         4. ...
-                         5. ..
+---
 
-  - **Flujos alternativos**: ..
-  - **Precondiciones**: ..
-  - **Postcondiciones**:  ...
+#### Módulo 5 : Administración y Monitoreo del Sistema  
+**Objetivo:** Supervisar la actividad del sistema, usuarios y métricas clave.
 
+- **CU20 – Ver listado general de usuarios**  
+  - **Actor Principal:** Administrador  
+  - **Precondiciones:** Acceso administrativo.  
+  - **Flujo Principal:**  
+    1. Accede al módulo de usuarios.  
+    2. Se muestra lista completa con datos y rol.  
+  - **Postcondiciones:** Lista visible para gestión.
 
-- **CU01 - Registrarse**
-  - **Actor**: ...
-  - **Flujo principal**: 1. ...
-                         2. ..
-                         3. ...
-                         4. ...
-                         5. ..
+- **CU21 – Deshabilitar cuenta de usuario**  
+  - **Actor Principal:** Administrador  
+  - **Precondiciones:** Usuario seleccionado.  
+  - **Flujo Principal:**  
+    1. Clic en deshabilitar.  
+    2. Confirma la acción.  
+    3. El sistema cambia el estado a “inactivo”.  
+  - **Postcondiciones:** Usuario bloqueado.
 
-  - **Flujos alternativos**: ..
-  - **Precondiciones**: ..
-  - **Postcondiciones**:  ...
-
-
-- **CU01 - Registrarse**
-  - **Actor**: ...
-  - **Flujo principal**: 1. ...
-                         2. ..
-                         3. ...
-                         4. ...
-                         5. ..
-
-  - **Flujos alternativos**: ..
-  - **Precondiciones**: ..
-  - **Postcondiciones**:  ...
-
-
-- **CU01 - Registrarse**
-  - **Actor**: ...
-  - **Flujo principal**: 1. ...
-                         2. ..
-                         3. ...
-                         4. ...
-                         5. ..
-
-  - **Flujos alternativos**: ..
-  - **Precondiciones**: ..
-  - **Postcondiciones**:  ...
-
-
-
-
-
-
-
-
-
-
-
-
+- **CU22 – Gestionar reportes y sesiones**  
+  - **Actor Principal:** Administrador  
+  - **Precondiciones:** Acceso al panel de reportes.  
+  - **Flujo Principal:**  
+    1. Accede a “Reportes”.  
+    2. Filtra por fechas, rol u otra variable.  
+    3. Visualiza gráficos y estadísticas.  
+    4. Exporta si lo desea.  
+  - **Postcondiciones:** Informes generados para análisis.
 
 </details>
+
 
 ### 3.2 Diagrama de casos de uso  
 📎 Adjuntar imagen:  
