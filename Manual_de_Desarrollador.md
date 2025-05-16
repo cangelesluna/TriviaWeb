@@ -378,8 +378,13 @@ Este documento recopila la planificación, análisis de requerimientos, diseño 
 
 
 ### 3.2 Diagrama de casos de uso  
-📎 Adjuntar imagen:  
-![Diagrama de casos de uso](./imagenes/diagrama_casos_uso.png)
+
+<details>
+  <summary>Ver Diagrama</summary>
+ 
+![Diagrama de casos de uso](./imagenes/Diagrama_de_Casos_de_uso.png)
+
+ </details>
 
 ### 3.3 Modelo BPMN  
 📎 Adjuntar imagen:  
@@ -395,26 +400,112 @@ Este documento recopila la planificación, análisis de requerimientos, diseño 
 - ![Prototipo estudiante](./imagenes/prototipo_estudiante.png)
 
 ### 4.2 Modelo entidad-relación  
-📎 Adjuntar imagen:  
-![Modelo ER](./imagenes/modelo_entidad_relacion.png)
+
+<details>
+  <summary>Ver Diagrama</summary>
+
+![Modelo ER](./imagenes/modeloER.png)
+
+ </details>
 
 ### 4.3 Modelo de base de datos lógico y físico  
-📎 Adjuntar PDF o imagen  
-- [📄 Modelo lógico](./documentos/modelo_logico.pdf)  
-- [📄 Modelo físico](./documentos/modelo_fisico.pdf)
 
-### 4.4 Diagrama de clases (opcional)  
-📎 Adjuntar imagen si aplica.
+<details>
+  <summary>Ver Modelos</summary>
 
----
+- [📄 Modelo lógico](./imagenes/modeloLogico.png)  
+- [📄 Modelo físico](./imagenes/modeloFisico.png)
+
+</details>
+
 
 ## 5. Base de datos
 
 ### 5.1 Código SQL de creación  
+
+<details>
+  <summary>Ver Codigo SQL</summary>
+
 ```sql
+-- Tabla general usuarios
 CREATE TABLE usuarios (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  nombre VARCHAR(100),
-  rol ENUM('docente', 'estudiante')
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(45) NOT NULL,
+    email VARCHAR(45) NOT NULL UNIQUE,
+    contraseña VARCHAR(255) NOT NULL, -- almacenar hash seguro
+    rol ENUM('estudiante', 'docente', 'administrador') NOT NULL,
+    estado ENUM('activo', 'inactivo') NOT NULL DEFAULT 'activo',
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
--- Más tablas...
+
+-- Tabla estudiantes (subtipo de usuarios)
+CREATE TABLE estudiantes (
+    id BIGINT PRIMARY KEY,
+    matricula VARCHAR(20) UNIQUE,
+    programa_estudio VARCHAR(100),
+    semestre INT,
+    FOREIGN KEY (id) REFERENCES usuarios(id) ON DELETE CASCADE
+);
+
+-- Tabla docentes (subtipo de usuarios)
+CREATE TABLE docentes (
+    id BIGINT PRIMARY KEY,
+    codigo_docente VARCHAR(20) UNIQUE,
+    departamento VARCHAR(100),
+    titulo_academico VARCHAR(100),
+    FOREIGN KEY (id) REFERENCES usuarios(id) ON DELETE CASCADE
+);
+
+-- Tabla administradores (subtipo de usuarios)
+CREATE TABLE administradores (
+    id BIGINT PRIMARY KEY,
+    nivel_acceso VARCHAR(50),
+    descripcion TEXT,
+    FOREIGN KEY (id) REFERENCES usuarios(id) ON DELETE CASCADE
+);
+
+-- Tabla trivias
+CREATE TABLE trivias (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(45) NOT NULL,
+    descripcion TEXT,
+    fecha_creacion DATE NOT NULL,
+    tiempo_limite INT NOT NULL,
+    docente_id BIGINT NOT NULL,
+    FOREIGN KEY (docente_id) REFERENCES docentes(id) ON DELETE CASCADE
+);
+
+-- Tabla preguntas
+CREATE TABLE preguntas (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    enunciado TEXT NOT NULL,
+    tipo ENUM('opcion_multiple', 'verdadero_falso', 'respuesta_corta') NOT NULL,
+    opciones JSON,
+    respuesta_correcta TEXT NOT NULL,
+    trivia_id BIGINT NOT NULL,
+    FOREIGN KEY (trivia_id) REFERENCES trivias(id) ON DELETE CASCADE
+);
+
+-- Tabla intentos
+CREATE TABLE intentos (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    fecha DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    puntaje DECIMAL(5,2),
+    estudiante_id BIGINT NOT NULL,
+    trivia_id BIGINT NOT NULL,
+    FOREIGN KEY (estudiante_id) REFERENCES estudiantes(id) ON DELETE CASCADE,
+    FOREIGN KEY (trivia_id) REFERENCES trivias(id) ON DELETE CASCADE
+);
+
+-- Tabla respuestas_estudiantes
+CREATE TABLE respuestas_estudiantes (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    respuesta TEXT NOT NULL,
+    es_correcta BOOLEAN NOT NULL,
+    intento_id BIGINT NOT NULL,
+    pregunta_id BIGINT NOT NULL,
+    FOREIGN KEY (intento_id) REFERENCES intentos(id) ON DELETE CASCADE,
+    FOREIGN KEY (pregunta_id) REFERENCES preguntas(id) ON DELETE CASCADE
+);
+
+</details>
