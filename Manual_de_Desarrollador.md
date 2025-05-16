@@ -20,13 +20,7 @@
   - [4.4 Diagrama de clases (opcional)](#44-diagrama-de-clases-opcional)
 - [5. Base de datos](#5-base-de-datos)
   - [5.1 Código SQL de creación](#51-código-sql-de-creación)
-  - [5.2 Scripts adicionales (triggers, views, procedures)](#52-scripts-adicionales-triggers-views-procedures)
-- [6. Desarrollo](#6-desarrollo)
-  - [6.1 Estructura del proyecto](#61-estructura-del-proyecto)
-  - [6.2 Tecnologías utilizadas](#62-tecnologías-utilizadas)
-  - [6.3 Configuraciones importantes](#63-configuraciones-importantes)
-- [7. Entregables y archivos adjuntos](#7-entregables-y-archivos-adjuntos)
-- [8. Conclusiones y recomendaciones](#8-conclusiones-y-recomendaciones)
+ 
 
 ---
 
