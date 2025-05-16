@@ -381,9 +381,16 @@ Este documento recopila la planificación, análisis de requerimientos, diseño 
  </details>
 
 ### 3.3 Modelo BPMN  
-📎 Adjuntar imagen:  
-![Modelo BPMN](./imagenes/modelo_bpmn.png)
+<details>
+  <summary>Ver Modelos</summary>
+  
+![Modelo BPMN1](./imagenes/RegistroUsuarios.png)
+![Modelo BPMN2](./imagenes/ResponderPreguntas.png)
+![Modelo BPMN3](./imagenes/AgregarPreguntas.png)
+![Modelo BPMN4](./imagenes/CrearTrivia.png)
+![Modelo BPMN5](./imagenes/EvaluacionySeguimiento.png)
 
+ </details>
 ---
 
 ## 4. Diseño del sistema
