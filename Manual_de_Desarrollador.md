@@ -418,7 +418,7 @@ Este documento recopila la planificación, análisis de requerimientos, diseño 
 <details>
   <summary>Ver Diagrama</summary>
 
-![Modelo ER](./imagenes/modeloER.png)
+- ![Modelo ER](./imagenes/modeloER.png)
 
  </details>
 
@@ -427,8 +427,8 @@ Este documento recopila la planificación, análisis de requerimientos, diseño 
 <details>
   <summary>Ver Modelos</summary>
 
-- [📄 Modelo lógico](./imagenes/modeloLogico.png)  
-- [📄 Modelo físico](./imagenes/modeloFisico.png)
+- ![📄 Modelo lógico](./imagenes/modeloLogico.png)  
+- ![📄 Modelo físico](./imagenes/modeloFisico.png)
 
 </details>
 
