@@ -395,9 +395,22 @@ Este documento recopila la planificación, análisis de requerimientos, diseño 
 ## 4. Diseño del sistema
 
 ### 4.1 Prototipos UX/UI  
-📎 Adjuntar enlaces o imágenes:  
-- [Figma - vista docente](https://www.figma.com/...)  
-- ![Prototipo estudiante](./imagenes/prototipo_estudiante.png)
+
+ <details>
+  <summary>Ver Prototipos</summary>
+
+#### Pantalla 1: Pantalla Principal del Usuario: Acceso a Foros, Sesiones, Tareas y Progreso
+- ![Prototipo 1](./imagenes/pantallaPrincipal.png)
+#### Pantalla 2: Pantalla de Foros: Interacción Asincrónica con Docentes y Pares
+- ![Prototipo 2](./imagenes/interaccionAsincrona.png)
+#### Pantalla 3: Pantalla de Mentoría Virtual: Sesiones Uno a Uno con Mentores
+- ![Prototipo 3](./imagenes/pantallaMentoria.png)
+#### Pantalla 4: Pantalla de Progreso Personalizado del Estudiante
+- ![Prototipo 4](./imagenes/pantallaProgreso.png)
+#### Pantalla 5: Pantalla de Entrega de Tareas y Feedback Escrito
+- ![Prototipo 5](./imagenes/pantallaEntrega.png)
+
+  </details>
 
 ### 4.2 Modelo entidad-relación  
 
