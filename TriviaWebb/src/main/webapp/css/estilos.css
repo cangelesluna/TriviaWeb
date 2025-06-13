@@ -1,0 +1,1233 @@
+@charset "UTF-8";
+
+/* Reseteo global para asegurar consistencia entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body - Fondo claro y tipografía básica */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: #007bff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo img {
+    height: 40px; /* Ajustamos el tamaño del logo */
+    max-width: 100%; /* Aseguramos que el logo no se deforme */
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar nav ul li {
+    margin: 0;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Sección hero */
+.hero {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.cta-buttonsh button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cta-buttonsh button:hover {
+    background-color: #0056b3;
+}
+
+.intro-video {
+    margin-top: 2rem;
+}
+
+.intro-video h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.intro-video video {
+    width: 100%;
+    max-width: 500px; /* Ajustamos el tamaño máximo del video */
+    border-radius: 5px;
+}
+
+/* Funciones clave */
+.features {
+    background-color: #e9ecef;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.feature-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+}
+
+.feature-card img {
+    max-width: 60px; /* Ajustamos el tamaño de los iconos */
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Cómo se juega */
+.how-to-play {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.how-to-play button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.how-to-play button:hover {
+    background-color: #218838;
+}
+
+/* Testimonios */
+.testimonials {
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.testimonial-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.testimonial-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+}
+
+.testimonial-card p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-card p:last-child {
+    font-size: 1rem;
+    color: gray;
+}
+
+/* Preguntas Frecuentes */
+.faq {
+    background-color: #e9ecef;
+    padding: 3rem 1rem;
+}
+
+.faq h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.faq-item {
+    background-color: white;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.faq-item p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Pie de página */
+.footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.footer .footer-links a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer .footer-social a {
+    color: white;
+    margin: 0 10px;
+}
+
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+    .navbar nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .feature-cards,
+    .testimonial-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-card,
+    .testimonial-card {
+        width: 80%;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cta-buttons button {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .intro-video video {
+        max-width: 100%;
+    }
+    
+    .create-trivia-form .form-group label {
+        font-size: 1rem;
+    }
+
+    .create-trivia-form .form-group input,
+    .create-trivia-form .form-group textarea,
+    .create-trivia-form .form-group select {
+        font-size: 1rem;
+    }
+
+    #add_question_button {
+        font-size: 1rem;
+    }
+
+    .question-section {
+        padding: 1rem;
+    }
+    
+       .create-trivia,
+    .teacher-trivias {
+        padding: 1.5rem;
+    }
+
+    .teacher-trivias table {
+        font-size: 0.9rem;
+    }
+
+    .teacher-trivias table th, 
+    .teacher-trivias table td {
+        padding: 8px;
+    }
+
+    .create-trivia button {
+        font-size: 1rem;
+    }
+    
+    .form-group label {
+        font-size: 1rem;
+    }
+
+    .form-group input {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+    
+    .active-trivia {
+        padding: 2rem 1rem;
+    }
+
+    .question {
+        padding: 1.5rem;
+    }
+
+    .high-scores table th,
+    .high-scores table td {
+        padding: 10px;
+    }
+
+    .share-trivia input {
+        font-size: 1rem;
+    }
+
+    .submit-button button {
+        font-size: 1rem;
+    }
+    
+     .trivia-results {
+        padding: 2rem 1rem;
+    }
+
+    .answers-results table th,
+    .answers-results table td {
+        padding: 10px;
+    }
+
+    .retry-options {
+        flex-direction: column;
+    }
+
+    .retry-options button {
+        width: 100%;
+        font-size: 1rem;
+    }
+    
+    .historical-results {
+        padding: 2rem 1rem;
+    }
+
+    .search-student .form-group label {
+        font-size: 1rem;
+    }
+
+    .search-student .form-group input {
+        font-size: 1rem;
+    }
+
+    .search-student button {
+        font-size: 1rem;
+    }
+
+    .attempts-results table th,
+    .attempts-results table td {
+        padding: 10px;
+    }
+
+    .attempts-results table td a {
+        font-size: 0.9rem;
+    }
+    
+    .user-profile {
+        padding: 2rem 1rem;
+    }
+
+    .user-details .form-group label {
+        font-size: 1rem;
+    }
+
+    .user-details .form-group input {
+        font-size: 1rem;
+    }
+
+    .user-details p {
+        font-size: 1rem;
+    }
+
+    .trivia-history table th,
+    .trivia-history table td {
+        padding: 10px;
+    }
+
+    .trivia-history table td a {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+
+
+
+
+/* Sección del formulario de registro */
+.register-form {
+    background-color: #ffffff;
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    width: 80%;
+    max-width: 600px;
+}
+
+.register-form h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="number"],
+.form-group select {
+    margin-top: 5px;
+}
+
+/* Sección específica para Estudiantes y Docentes */
+.role-specific-fields {
+    margin-top: 1.5rem;
+}
+
+.role-specific-fields .form-group {
+    margin-bottom: 1.2rem;
+}
+
+/* Botón de submit */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+/* Sección del formulario de inicio de sesión */
+.login-form {
+    background-color: #ffffff;
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    width: 80%;
+    max-width: 500px;
+}
+
+.login-form h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    margin-top: 5px;
+}
+
+/* Opciones adicionales (Recordar contraseña y registro) */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    margin-right: 5px;
+}
+
+.register-link a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 0.9rem;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Botón de submit */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Sección de Panel del Docente */
+.teacher-panel {
+    padding: 3rem 1rem;
+}
+
+/* Crear nueva trivia */
+.create-trivia {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.create-trivia h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.create-trivia .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.create-trivia .form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.create-trivia .form-group input,
+.create-trivia .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.create-trivia button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.create-trivia button:hover {
+    background-color: #0056b3;
+}
+
+/* Lista de trivias creadas */
+.teacher-trivias {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.teacher-trivias h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.teacher-trivias table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.teacher-trivias table th,
+.teacher-trivias table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.teacher-trivias table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.teacher-trivias table td a {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.teacher-trivias table td a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+/* Sección del formulario de creación de trivia */
+.create-trivia-form {
+    background-color: #ffffff;
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    width: 80%;
+    max-width: 800px;
+}
+
+.create-trivia-form h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.create-trivia-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.create-trivia-form .form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.create-trivia-form .form-group input,
+.create-trivia-form .form-group textarea,
+.create-trivia-form .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.create-trivia-form .form-group input[type="number"] {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+.create-trivia-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.create-trivia-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Sección de preguntas */
+#questions-container {
+    margin-top: 2rem;
+}
+
+.question-section {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+
+.question-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.question-section .form-group {
+    margin-bottom: 1rem;
+}
+
+.question-section .form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.question-section .form-group input,
+.question-section .form-group textarea,
+.question-section .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#add_question_button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+#add_question_button:hover {
+    background-color: #218838;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Sección de Trivia Activa */
+.active-trivia {
+    padding: 3rem 2rem;
+}
+
+/* Sección de preguntas */
+.question {
+    background-color: #ffffff;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.question h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.options {
+    margin-top: 1rem;
+}
+
+.options label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.options input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Respuesta corta */
+.options input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+/* Botón de enviar respuestas */
+.submit-button {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.submit-button button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button button:hover {
+    background-color: #218838;
+}
+
+/* Sección de Puntajes Más Altos */
+.high-scores {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.high-scores h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.high-scores table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.high-scores table th,
+.high-scores table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.high-scores table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+/* Sección para compartir la trivia */
+.share-trivia {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.share-trivia h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.share-trivia p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.share-trivia input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.share-trivia button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.share-trivia button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+/* Sección de resultados de trivia */
+.trivia-results {
+    padding: 3rem 2rem;
+}
+
+/* Respuestas Correctas e Incorrectas */
+.answers-results {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.answers-results h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.answers-results table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.answers-results table th,
+.answers-results table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.answers-results table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.answers-results table td {
+    word-wrap: break-word;
+}
+
+.answers-results table td:last-child {
+    text-align: center;
+}
+
+.answers-results table td.correct {
+    color: green;
+    font-weight: bold;
+}
+
+.answers-results table td.incorrect {
+    color: red;
+    font-weight: bold;
+}
+
+/* Fecha del Intento */
+.attempt-date {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.attempt-date h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.attempt-date p {
+    font-size: 1.2rem;
+}
+
+/* Opciones de retry */
+.retry-options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.retry-options button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.retry-options button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+
+/* Sección de Resultados Históricos */
+.historical-results {
+    padding: 3rem 2rem;
+}
+
+/* Búsqueda por estudiante */
+.search-student {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.search-student h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.search-student .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.search-student .form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.search-student .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-student button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-student button:hover {
+    background-color: #0056b3;
+}
+
+/* Tabla de intentos de los estudiantes */
+.attempts-results {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.attempts-results h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.attempts-results table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.attempts-results table th,
+.attempts-results table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.attempts-results table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.attempts-results table td {
+    word-wrap: break-word;
+}
+
+.attempts-results table td a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.attempts-results table td a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Sección del perfil de usuario */
+.user-profile {
+    padding: 3rem 2rem;
+}
+
+/* Datos del usuario */
+.user-details {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.user-details h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.user-details p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Historial de trivias */
+.trivia-history {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.trivia-history h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.trivia-history table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.trivia-history table th,
+.trivia-history table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.trivia-history table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.trivia-history table td {
+    word-wrap: break-word;
+}
+
+.trivia-history table td a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.trivia-history table td a:hover {
+    text-decoration: underline;
+}
+
