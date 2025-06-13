@@ -1,0 +1,392 @@
+@charset "UTF-8";
+
+/* --- Reset y básicos --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #FFFFFF; /* Fondo blanco predominante */
+  color: #212529; /* Negro carbón para texto */
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* --- Contenedores generales --- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 30px;
+}
+
+/* --- Tipografías y títulos --- */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #212529;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* --- Navegación / Header --- */
+header {
+  background-color: #03A9F4; /* Azul cielo */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  flex-wrap: wrap;
+  color: white;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 36px;
+  margin-right: 10px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+nav a:hover {
+  opacity: 0.8;
+}
+
+/* --- Botones generales --- */
+.btn {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.btn-pink {
+  background-color: #E91E63; /* Fucsia */
+  color: white;
+}
+
+.btn-pink:hover {
+  background-color: #c2185b;
+}
+
+.btn-blue {
+  background-color: #03A9F4; /* Azul cielo */
+  color: white;
+}
+
+.btn-blue:hover {
+  background-color: #0288d1;
+}
+
+.btn-black {
+  background-color: #212529; /* Negro carbón */
+  color: white;
+}
+
+.btn-black:hover {
+  background-color: #121416;
+}
+
+.btn-link {
+  background: none;
+  color: #03A9F4;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.btn-link:hover {
+  opacity: 0.8;
+}
+
+/* --- Hero / sección principal --- */
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.hero p {
+  font-size: 1.125rem;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  color: #555;
+}
+
+/* --- Grillas para funcionalidades, iconos --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px;
+  justify-items: center;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.item img, .icon-circle {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.item h4 {
+  margin: 10px 0 5px;
+  color: #212529;
+}
+
+.item p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* --- Formularios --- */
+.form-container {
+  max-width: 500px;
+  margin: 50px auto;
+  background: white;
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #E91E63;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #212529;
+}
+
+/* Checkbox con texto */
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.checkbox input {
+  margin-right: 12px;
+}
+
+/* Mensajes de validación */
+.error-msg {
+  color: #E91E63;
+  font-size: 0.875rem;
+  margin-top: 5px;
+}
+
+.success-msg {
+  color: #4CAF50;
+  font-size: 0.875rem;
+  margin-top: 5px;
+}
+
+/* Botón envío formulario */
+.btn-submit {
+  width: 100%;
+  background-color: #03A9F4;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: #0288d1;
+}
+
+/* --- Tablas --- */
+.table-responsive {
+  overflow-x: auto;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+thead {
+  background-color: #03A9F4;
+  color: white;
+}
+
+th,
+td {
+  padding: 14px 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* --- Botones de acción en tablas --- */
+.btn-table {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-edit {
+  background-color: #FFEB3B; /* Amarillo claro */
+  color: #212529;
+}
+
+.btn-edit:hover {
+  background-color: #fdd835;
+}
+
+.btn-delete {
+  background-color: #E91E63;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #c2185b;
+}
+
+.btn-share {
+  background-color: #03A9F4;
+  color: white;
+}
+
+.btn-share:hover {
+  background-color: #0288d1;
+}
+
+/* --- Modales y confirmaciones --- */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 10px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 30px;
+  }
+  
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  nav {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .btn, .btn-submit {
+    font-size: 0.9rem;
+  }
+  
+  table {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  
+  .item img {
+    width: 60px;
+    height: 60px;
+  }
+}

@@ -1,0 +1,21 @@
+plugins {
+    id 'java'  // Aplica el plugin de Java
+    id 'org.junit.platform.gradle.plugin' version '1.7.2'  // Asegura que se ejecute JUnit
+}
+
+java {
+    // Configurar Java 21
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)  // Especifica Java 21
+    }
+}
+
+dependencies {
+    // Dependencia para JUnit 5
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
+
+    // Dependencia para Mockito
+    testImplementation 'org.mockito:mockito-core:3.7.7'
+}
+}
