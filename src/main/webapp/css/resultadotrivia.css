@@ -1,0 +1,122 @@
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f3f6fb;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #0077c2;
+      color: white;
+      padding: 30px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .score-box {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+    }
+
+    .score-box h2 {
+      font-size: 26px;
+      margin-bottom: 10px;
+      color: #0077c2;
+    }
+
+    .score {
+      font-size: 50px;
+      font-weight: bold;
+      color: #00b894;
+      margin: 10px 0;
+    }
+
+    .summary {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .result-list {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .result-item {
+      padding: 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .result-item:last-child {
+      border-bottom: none;
+    }
+
+    .pregunta {
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    .respuesta {
+      margin-top: 10px;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .icono {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+
+    .respuesta span {
+      display: block;
+      margin: 2px 0;
+    }
+
+    .boton-volver {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .boton-volver a {
+      background: #0077c2;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .boton-volver a:hover {
+      background: #005f9e;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 60px;
+      padding: 20px;
+      color: #999;
+    }
+
+    @media (max-width: 600px) {
+      .score {
+        font-size: 40px;
+      }
+    }

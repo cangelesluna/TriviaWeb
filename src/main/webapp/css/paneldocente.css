@@ -1,0 +1,119 @@
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #333;
+    }
+
+    header {
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+    }
+
+    nav a {
+      margin-right: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .menu-right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .btn-pro {
+      background: #ff5722;
+      color: #fff;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    .btn-lang {
+      background: #e0f7fa;
+      color: #333;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    .main {
+      max-width: 1000px;
+      margin: 40px auto;
+      text-align: center;
+    }
+
+    .section-icons {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-bottom: 50px;
+    }
+
+    .icon-box {
+      text-align: center;
+      color: #666;
+    }
+
+    .icon-circle {
+      border: 2px solid #2196f3;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      color: #2196f3;
+    }
+
+    .quick-questions {
+      text-align: center;
+    }
+
+    .quick-questions h3 {
+      margin-bottom: 30px;
+      font-weight: normal;
+      color: #444;
+      letter-spacing: 1px;
+    }
+
+    .quick-options {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+    }
+
+    .circle-option {
+      border: 2px solid;
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 20px;
+      margin: 0 auto 10px;
+    }
+
+    .mc { border-color: #fbc02d; color: #fbc02d; }
+    .tf { border-color: #7e57c2; color: #7e57c2; }
+    .sa { border-color: #ff7043; color: #ff7043; }
+
+    .label {
+      font-size: 14px;
+      color: #666;
+    }

@@ -1,0 +1,84 @@
+
+/* registro */
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .form-container {
+      max-width: 500px;
+      margin: 50px auto;
+      background: white;
+      padding: 40px 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .google-btn {
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 10px;
+      text-align: center;
+      background: #fff;
+      border: 1px solid #ccc;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group input, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .checkbox input {
+      margin-right: 10px;
+    }
+
+    .checkbox a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: #00aaff;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .note {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #555;
+      text-align: center;
+    }
+
+    .note a {
+      color: #007BFF;
+      text-decoration: none;
+    }
