@@ -1,0 +1,21 @@
+Question Number,Question,Option A,Option B,Option C,Option D,Correct Answer
+1,¿Qué significa CPU?,Unidad Central de Procesamiento,Unidad de Proceso Central,Unidad Personal de Computadora,Unidad Central de Procesador,A
+2,¿Qué lenguaje de programación es conocido como 'la madre de todos los lenguajes'?,Java,C++,Lenguaje Ensamblador,FORTRAN,C
+3,¿Cuál es el propósito principal de un sistema operativo?,Ejecutar aplicaciones,Gestionar recursos de hardware,Proveer acceso a internet,Crear documentos y hojas de cálculo,B
+4,¿Qué empresa desarrolló la primera interfaz gráfica de usuario (GUI) para computadoras personales?,Microsoft,IBM,Apple,Xerox,B
+5,¿Qué significa el acrónimo HTML?,Lenguaje de Marcado de Hipertexto,Lenguaje de Máquinas de Texto de Alto Nivel,Lenguaje de Transferencia de Hipertexto,Lenguaje de Marcado de Hipervínculos y Texto,A
+6,¿Cuál es la función de la RAM en una computadora?,Almacenamiento permanente,Almacenamiento temporal,Procesamiento de datos,Conexión de dispositivos externos,B
+7,¿Qué lenguaje de programación se usa frecuentemente para inteligencia artificial y aprendizaje automático?,Python,Java,C#,Ruby,A
+8,¿Cuál es el propósito de un firewall?,Proteger contra virus,Controlar el acceso a la red,Filtro de correos electrónicos no deseados,Mejorar la velocidad y rendimiento de la computadora,B
+9,¿Qué significa el acrónimo URL?,Localizador Uniforme de Recursos,Localizador Universal de Recursos,Localizador Uniforme de Recuperación,Localizador Universal de Recuperación,A
+10,¿Cuál de los siguientes es un paradigma de programación?,Programación algorítmica,Programación funcional,Programación de hardware,Programación de redes,B
+11,¿Cuál es la función principal de un compilador?,Traducir código de alto nivel a código máquina,Ejecutar código línea por línea,Gestionar la asignación de memoria,Interpretar código en tiempo real,A
+12,En gráficos por computadora, ¿qué significa RGB?,Rojo, Verde, Azul,Bloque de Gráficos Aleatorios,Leer, Generar, Construir,A
+13,¿Cuál es el propósito de un sistema de gestión de bases de datos (DBMS)?,Crear juegos de computadora,Gestionar y organizar datos,Proveer servicios de internet,Desarrollar aplicaciones de software,B
+14,¿Cuál es el equivalente binario del número decimal 25?,11001,10100,11111,10010,A
+15,¿Qué estructura de datos sigue el principio Last In, First Out (LIFO)?,Cola,Pila,Lista Enlazada,Árbol,B
+16,¿Cuál es el propósito principal de una consulta SQL?,Actualizar software,Recuperar datos de una base de datos,Crear gráficos,Gestionar redes de computadoras,B
+17,¿Qué protocolo se utiliza para la comunicación segura en una red de computadoras?,HTTP,FTP,SSH,SMTP,C
+18,¿Cuál es el propósito de la declaración 'if-else' en programación?,Crear bucles,Ejecutar un bloque de código condicionalmente,Definir variables,Manejar errores y excepciones,B
+19,¿Cuál es el rol de un sistema de control de versiones en el desarrollo de software?,Gestionar los plazos del proyecto,Registrar cambios en el código fuente,Crear interfaces de usuario,Probar el rendimiento del software,B
+20,¿Cuál es la importancia de la Prueba de Turing en la inteligencia artificial?,Reconocimiento de voz,Robótica,Aprendizaje automático,Probar la capacidad de una máquina para exhibir inteligencia humana,C
